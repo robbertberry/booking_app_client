@@ -1,11 +1,8 @@
-require_relative '../services/bookings_api_service'
-
 class PaymentsController < ApplicationController
   def with_quality_check
     begin
-      @bookings_with_quality_check = BookingsApiService.new.fetch || []
+      @bookings_with_quality_check = BookingsQualityCheckService.new.fetch
     rescue StandardError => e
-      @bookings_with_quality_check = []
       flash.now[:alert] = e.message
     end
 

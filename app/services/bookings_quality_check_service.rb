@@ -3,11 +3,11 @@ require 'json'
 require 'money'
 require 'money/bank/open_exchange_rates_bank'
 
-class BookingsApiService
+class BookingsQualityCheckService
   BOOKINGS_API_URL = 'http://localhost:9292/api/bookings'.freeze
 
   def fetch
-    process_bookings(fetch_bookings_data)
+    process_bookings(fetch_bookings_data) || []
   end
 
   def fetch_bookings_data
