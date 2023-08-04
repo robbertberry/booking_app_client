@@ -117,6 +117,7 @@ GEM
     nokogiri (1.15.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    open_exchange_rates (0.6.1)
     popper_js (2.11.7)
     puma (3.12.6)
     racc (1.7.1)
@@ -241,6 +242,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   money
   money-open-exchange-rates
+  open_exchange_rates
   puma (~> 3.11)
   rails (~> 5.2.8)
   rails-controller-testing

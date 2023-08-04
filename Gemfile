@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '~> 3.4'
 gem 'rails-controller-testing'
 gem 'money'
 gem 'money-open-exchange-rates'
+gem 'open_exchange_rates'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
