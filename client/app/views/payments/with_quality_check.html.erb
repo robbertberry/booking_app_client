@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payments with Quality Check</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4">Payments with Quality Check</h1>
+
+    <table class="table table-bordered table-striped mt-4">
+      <thead class="thead-light">
+        <tr>
+          <th>Reference</th>
+          <th>Amount</th>
+          <th>Amount With Fees</th>
+          <th>Amount Received</th>
+          <th>Quality Check</th>
+          <th>Over Payment</th>
+          <th>Under Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings_with_quality_check.each do |booking| %>
+          <tr>
+            <td><%= booking[:reference] %></td>
+            <td><%= booking[:amount] %></td>
+            <td><%= booking[:amount_with_fees] %></td>
+            <td><%= booking[:amount_received] %></td>
+            <td><%= booking[:quality_check] %></td>
+            <td><%= booking[:over_payment] ? 'X' : '-' %></td>
+            <td><%= booking[:under_payment] ? 'X' : '-' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <button class="btn btn-primary mt-4" onclick="refreshBookings()">Refresh</button>
+    </div>
+  </div>
+
+  <script>
+    function refreshBookings() {
+      location.reload();
+    }
+  </script>
+</body>
+</html>
